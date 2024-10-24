@@ -21,7 +21,7 @@ fetchContents();
 
 return (
 <div>
-<h1>Lista de contenidos</h1>
+<h1>Los contenidos son los siguientes</h1>
 <ul>
 {contents.map((content) => (
 <li key={content._id}>{content.name} (Content: {content.content}) y hoy puedes ver la siguiente película: {pelicula.content}</li>
