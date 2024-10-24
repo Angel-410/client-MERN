@@ -12,13 +12,12 @@ const handleSubmit = async (event) => {
 event.preventDefault();
 
 const apiKey = '0b1e10d3dda488ebb64caeb5e1873d8c'; 
-let movieId = Math.floor(Math.random() * 10000) + 1;
+let movieId = Math.floor(Math.random() * 500) + 1;
 //const respuesta = axios.get(url)
-try {
-  const respuesta = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es-MX`);
+const respuesta = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es-MX`);
   //if(respuesta.status === 200){
-    const datos = await respuesta.json();
-    const pelicula = datos.title;  
+const datos = await respuesta.json();
+const pelicula = datos.title;  
   /*} else if(respuesta.status === 401){
       console.log('API_key incorrecta');
   } else if(respuesta.status === 404){
@@ -26,9 +25,9 @@ try {
   } else {
       console.log('Error desconocido')
   } */
-} catch(error){
+/*} catch(error){
     console.log(error);
-}
+}*/
   
 try {
 // Petición POST con manejo de errores
