@@ -24,7 +24,7 @@ return (
 <h1>Los contenidos son los siguientes</h1>
 <ul>
 {contents.map((content) => (
-<li key={content._id}>{content.name} (Content: {content.content})</li>
+<li key={content._id}>{content.name} (Hoy puedes ver la siguiente pelicula: {pelicula.content})</li>
 ))}
 </ul>
 </div>
