@@ -14,9 +14,21 @@ event.preventDefault();
 const apiKey = '0b1e10d3dda488ebb64caeb5e1873d8c'; 
 let movieId = Math.floor(Math.random() * 10000) + 1;
 //const respuesta = axios.get(url)
-const respuesta = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es-MX`);
-const datos = await respuesta.json();
-const pelicula = datos.title;  
+try {
+  const respuesta = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es-MX`);
+  if(respuesta.status === 200){
+    const datos = await respuesta.json();
+    const pelicula = datos.title;  
+  } else if(respuesta.status === 401){
+      console.log('API_key incorrecta');
+  } else if(respuesta.status === 404){
+      console.log('La película que buscas no existe')
+  } else {
+      console.log('Error desconocido')
+  }
+} catch(error){
+    console.log(error);
+}
   
 try {
 // Petición POST con manejo de errores
