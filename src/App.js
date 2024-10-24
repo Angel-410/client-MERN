@@ -10,7 +10,7 @@ function App() {
 // En nuestro sector JSX, agregamos los componentes que importamos.
 return (
 <div className="App">
-<h1>Mi primera app de MERN que consume una API</h1>
+<h1>Esta API se conecta a una API de peliculas y aleatoriamente te sugiere una</h1>
 <AddContent />
 <ContentList />
 </div>
