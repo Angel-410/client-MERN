@@ -25,11 +25,11 @@ try {
       console.log('La película que buscas no existe')
   } else {
       console.log('Error desconocido')
-  }
+  } */
 } catch(error){
     console.log(error);
 }
-  */
+  
 try {
 // Petición POST con manejo de errores
 const newContent = { name, content, pelicula };
