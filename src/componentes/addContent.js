@@ -12,7 +12,7 @@ const handleSubmit = async (event) => {
 event.preventDefault();
 
 const apiKey = '0b1e10d3dda488ebb64caeb5e1873d8c'; 
-let movieId = Math.floor(Math.random() * 100) + 1;
+let movieId = Math.floor(Math.random() * 10000) + 1;
 //const respuesta = axios.get(url)
 const respuesta = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es-MX`);
 const datos = await respuesta.json();
